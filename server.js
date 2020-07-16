@@ -16,7 +16,7 @@ const io = socketio(server);
 
 if (process.env.NODE_ENV === "production") {
 
-  app.use(express.static("build"));
+  app.use(express.static("Public"));
 
 
   app.get("*", (req, res) => {
