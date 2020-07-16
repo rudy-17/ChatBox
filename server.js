@@ -14,18 +14,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server);
 
-if (process.env.NODE_ENV === "production") {
-
-  app.use(express.static("build"));
-
-
-  app.get("*", (req, res) => {
-       res.sendFile(path.resolve(__dirname,  "build", "index.html"));
-   });
-
- }
 // Set static folder
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'Public')));
 
 const botName = 'ChatCord Bot';
 
